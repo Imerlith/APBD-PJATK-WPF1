@@ -23,5 +23,15 @@ namespace Task3
         {
             InitializeComponent();
         }
+
+        private void StatusCBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            StatusTextBox.Text = StatusCBox.Text;
+        }
+
+        private void ZamknijBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+           Close();
+        }
     }
 }

@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task3"
         mc:Ignorable="d"
-        Title="Zadanie 2" Height="300" Width="500"
+        Title="Zadanie 2" Height="200" Width="500"
         WindowStartupLocation="CenterScreen">
-    <Grid>
-        
+    <Grid Margin="5" >
+        <Button x:Name="ZamknijBtn"   Content="Zamknij" HorizontalAlignment="Left"
+                Margin="400,108,0,0" VerticalAlignment="Top" Width="72" Height="36"
+                Click="ZamknijBtn_OnClick" />
+        <Label Padding="5" Content="Status studenta to" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-0.156"/>
+        <Label Padding="5 5 0 5 " Content="Wybierz status " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.393,-2.876"/>
+        <TextBox x:Name="StatusTextBox" Padding="5 5 5 0" HorizontalAlignment="Left" Height="31" Margin="10,67,0,0"  Text="cos" VerticalAlignment="Top"
+                 Width="462" FontSize="15" TextAlignment="Left"/>
+        <ComboBox x:Name="StatusCBox" Padding="5" HorizontalAlignment="Left" 
+                  Margin="101,10,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="StatusCBox_OnSelectionChanged">
+            <ComboBoxItem IsSelected="True">Student</ComboBoxItem>
+            <ComboBoxItem>Skreślony</ComboBoxItem>
+            <ComboBoxItem>Absolwent</ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 </Window>
