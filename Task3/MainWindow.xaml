@@ -18,9 +18,9 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Button Content="Okno1" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="Red"/>
+        <Button x:Name="RedButton" Content="Okno1" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="Red" Click="RedButton_Click"/>
         <Button Content="Okno2" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Background="Blue"/>
-        <Button Content="Okno3" Grid.Column="2" Grid.Row="0"  Background="Yellow"/>
+        <Button x:Name="YellowButton" Content="Okno3" Grid.Column="2" Grid.Row="0"  Background="Yellow" Click="YellowButton_Click"/>
         <Button Content="Okno4" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Background="Black"/>
     </Grid>
 </Window>

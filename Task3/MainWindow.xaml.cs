@@ -24,5 +24,15 @@ namespace Task3
         {
             InitializeComponent();
         }
+
+        private void RedButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Kliknięto w czerwony");
+        }
+
+        private void YellowButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Kliknięto w żółty");
+        }
     }
 }
