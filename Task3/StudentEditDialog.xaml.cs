@@ -15,26 +15,13 @@ using System.Windows.Shapes;
 namespace Task3
 {
     /// <summary>
-    /// Interaction logic for Zadanie2.xaml
+    /// Interaction logic for StudentEditDialog.xaml
     /// </summary>
-    public partial class Zadanie2 : Window
+    public partial class StudentEditDialog : Window
     {
-        public Zadanie2()
+        public StudentEditDialog()
         {
             InitializeComponent();
-            
-        }
-
-        private void StatusCBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            StatusTextBox.Text  = (e.AddedItems[0] as ComboBoxItem).Content as string;
-
-        }
-
-        private void ZamknijBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-           Close();
         }
     }
 }

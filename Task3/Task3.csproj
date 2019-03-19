@@ -55,8 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Structure\Student.cs" />
+    <Compile Include="StudentEditDialog.xaml.cs">
+      <DependentUpon>StudentEditDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Zadanie2.xaml.cs">
       <DependentUpon>Zadanie2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Zadanie3i4.xaml.cs">
+      <DependentUpon>Zadanie3i4.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +77,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StudentEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Zadanie2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zadanie3i4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
