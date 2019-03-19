@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,7 +43,8 @@ namespace Task3
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-           
+                
+
                 var student = new Student { Imie = FNameTxtBox.Text, Nazwisko = LNameTxtBox.Text, Indeks = IndexTxtBox.Text };
                 StudentDataGrid.Items.Add(student);
                 StudentDataGrid.Items.Refresh();
@@ -63,6 +65,16 @@ namespace Task3
             if (!(grid.ItemContainerGenerator.ContainerFromItem(grid.SelectedItem) is DataGridRow dgr)) return;
             var student = dgr.Item as Student;
             new StudentEditDialog(student).Show();
+        }
+
+        private bool ValidateNames(string toValidate)
+        {
+            return !string.IsNullOrEmpty(toValidate);
+        }
+
+        private bool ValidateIndex(string index)
+        {
+            return ValidateNames(index) && index.StartsWith("s");
         }
     }
 }
