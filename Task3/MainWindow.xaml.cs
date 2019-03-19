@@ -33,7 +33,8 @@ namespace Task3
 
         private void YellowButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Kliknięto w żółty");
+            var window = new Zadanie3i4();
+            window.Show();
         }
     }
 }
