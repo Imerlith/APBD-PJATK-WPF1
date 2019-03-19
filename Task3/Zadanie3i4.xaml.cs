@@ -56,5 +56,13 @@ namespace Task3
             StudentDataGrid.Items.Remove(selectedItem);
             
         }
+
+        private void StudentDataGrid_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (!(sender is DataGrid grid) || grid.SelectedItems.Count != 1) return;
+            if (!(grid.ItemContainerGenerator.ContainerFromItem(grid.SelectedItem) is DataGridRow dgr)) return;
+            var student = dgr.Item as Student;
+            new StudentEditDialog(student).Show();
+        }
     }
 }

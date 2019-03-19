@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Task3.Structure;
 
 namespace Task3
 {
@@ -19,9 +20,17 @@ namespace Task3
     /// </summary>
     public partial class StudentEditDialog : Window
     {
-        public StudentEditDialog()
+        public StudentEditDialog(Student student)
         {
             InitializeComponent();
+            FNameTxtBox.Text = student.Imie;
+            LNameTxtBox.Text = student.Nazwisko;
+            IndexTxtBox.Text = student.Indeks;
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

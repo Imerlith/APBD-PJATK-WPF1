@@ -20,7 +20,7 @@
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <DataGrid  Name="StudentDataGrid" Grid.Column="0" Grid.ColumnSpan="3" CanUserAddRows="False"
-                   IsReadOnly="True">
+                   IsReadOnly="True" MouseDoubleClick="StudentDataGrid_OnMouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Imię" Binding="{Binding Imie}"/>
                 <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>

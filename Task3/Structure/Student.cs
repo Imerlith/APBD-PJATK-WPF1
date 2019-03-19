@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task3.Structure
 {
-    class Student
+    public class Student
     {
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
