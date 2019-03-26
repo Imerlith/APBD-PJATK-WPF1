@@ -22,19 +22,38 @@ namespace Cwiczenia4
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<Student> students;
         public MainWindow()
         {
             InitializeComponent();
+            //LoadDataToListBox1();
+            LoadDataToListBoxAndDataGrid();
+        }
+
+        private void LoadDataToListBox1()
+        {
+            StudentsListBox.Items.Add(new ListBoxItem { Content = "Kwiatkowska" });
+            StudentsListBox.Items.Add("Wieczorowski");
+            StudentsListBox.Items.Add(new Student {IdStudent=1, Imie= "Jakub", Nazwisko="Dzieciątko" });
+        }
+
+        private void LoadDataToListBoxAndDataGrid()
+        {
+            students = new ObservableCollection<Student>();
+            students.Add(new Student { IdStudent = 1, Imie = "Jakub", Nazwisko = "Dzieciątko" ,Plec = true });
+            students.Add(new Student { IdStudent = 2, Imie = "Przemysław", Nazwisko = "Gołębski" });
+            StudentsListBox.ItemsSource = students;
+            StudentsDataGrid.ItemsSource = students;
         }
 
         private void ShowSelectedButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(StudentsListBox.SelectedItem.ToString());
         }
 
         private void AddStudentButton_Click(object sender, RoutedEventArgs e)
         {
-
+            students.Add(new Student { IdStudent = 3, Imie = "Paweł", Nazwisko = "Kalbarczyk" });
         }
     }
 }
