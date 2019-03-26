@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Cwiczenia4
             InitializeComponent();
             //LoadDataToListBox1();
             LoadDataToListBoxAndDataGrid();
+            ConnectToDB();
         }
 
         private void LoadDataToListBox1()
@@ -54,6 +56,25 @@ namespace Cwiczenia4
         private void AddStudentButton_Click(object sender, RoutedEventArgs e)
         {
             students.Add(new Student { IdStudent = 3, Imie = "Paweł", Nazwisko = "Kalbarczyk" });
+        }
+        private void ConnectToDB()
+        {
+            string connectionString = "Server = db-mssql; Integrated Security=SSPI;Database=s16540";
+            using(SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                using (SqlCommand command = new SqlCommand("select * from emp", con))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string nazwisko = reader["ename"].ToString();
+                        int index = int.Parse(reader["sal"].ToString());
+                        students.Add(new Student { Nazwisko = nazwisko, IdStudent = index });
+                    }
+                }
+            }
         }
     }
 }
