@@ -67,7 +67,7 @@ namespace Task3
             new StudentEditDialog(student).Show();
         }
 
-        private bool ValidateNames(string toValidate)
+        private static bool ValidateNames(string toValidate)
         {
             return !string.IsNullOrEmpty(toValidate);
         }
